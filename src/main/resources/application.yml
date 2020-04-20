@@ -1,0 +1,31 @@
+# Spring
+phase: local
+spring:
+  autoconfigure:
+  application.name: booksearch
+  jpa:
+    database: h2
+    hibernate.ddl-auto: update
+    show-sql: true
+    properties.hibernate.jdbc.time_zone: Asia/Seoul
+    generate-ddl: true
+  datasource:
+    url: jdbc:h2:~/bs
+    username: sa
+    password:
+    driverClassName: org.h2.Driver
+  h2.console:
+    enabled: true
+    path: /h2database/console
+  api :
+    kakao :
+      domain : https://dapi.kakao.com
+      book-search-api : /v3/search/book
+      api-key : de09410a9b56585ce837d3f5dc694ee7
+    naver :
+      domain : https://openapi.naver.com
+      book-search-api : /v1/search/book.json
+      client-id : dYPzHNGkK2JuUfbxQa9f
+      client-secret : CtTyFdpiPF
+
+server.port: 8080
